@@ -1,0 +1,15 @@
+package com.collections.linkedList;
+
+import java.util.LinkedList;
+
+public class entry {
+
+	public static void main(String[] args) {
+		
+		LinkedList<Student> liStudent= new LinkedList<>();
+		liStudent.add(new Student("Srinidhi", 14));
+		liStudent.add(new Student("Sri", 5));
+
+	}
+
+}

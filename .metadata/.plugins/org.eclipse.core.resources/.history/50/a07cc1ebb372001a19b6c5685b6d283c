@@ -1,0 +1,6 @@
+
+interface IDance {
+
+	void Activity();
+
+}

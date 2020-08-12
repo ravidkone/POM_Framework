@@ -1,0 +1,16 @@
+package Demo_Selenium.Demo_Selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+public class widget extends BrowserUtility{
+
+	public static void main(String[] args) {
+		launchBrowser("ch");
+		loginToBrowser();
+		WebElement ele = BrowserUtility.driver.findElement(By.xpath("//button[contains(text(),'Widget')]"));
+		waitForPageElementToVisible(ele);
+		
+	}
+
+}

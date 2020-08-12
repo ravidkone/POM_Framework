@@ -1,0 +1,14 @@
+package RestAssured_Demo.RestAssured_Demo;
+
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+
+public class getMethodExternal {
+
+	public static void main(String[] args) {
+		RestAssured.baseURI="https://jsonplaceholder.typicode.com/users";
+		Response res = RestAssured.given().get();
+
+	}
+
+}

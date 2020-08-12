@@ -1,0 +1,17 @@
+package Demo_Selenium.Demo_Selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class SwitchTo extends BrowserUtility{
+
+	public static void main(String[] args) {
+		launchBrowser("ch");
+		loginToBrowser();
+		//local webdriver i have created and i have replace the value of the browser intstantiated driver objected to it
+		WebDriver driver = BrowserUtility.driver;
+		waitForPageElementToVisible(driver.findElement(By.xpath("//button[contains(text(),'Switch To')]")));
+		driver.findElement(By.xpath("//button[contains(text(),'Switch To')]")).click();
+	}
+
+}

@@ -1,0 +1,18 @@
+
+public class Day4 {
+
+	//Recursive loop
+	// Arrays
+	//Strings
+	public static void main(String[] args) {
+		
+		String str = "Hello"; 
+		// String is not primitive data
+		//String is a separate class
+		System.out.println(str);
+		System.out.println(str.length());
+		System.out.println(str.toLowerCase());
+		System.out.println(str.toUpperCase());
+	}
+
+}

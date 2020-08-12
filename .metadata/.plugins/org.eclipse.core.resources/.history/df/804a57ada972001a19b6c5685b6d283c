@@ -1,0 +1,9 @@
+
+public class entry {
+
+	public static void main(String[] args) {
+		//1. Class will be declared using keyword abstract
+
+	}
+
+}

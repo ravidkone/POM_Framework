@@ -1,0 +1,42 @@
+package ErrorsExceptions;
+
+public class entry {
+
+	public static void main(String[] args) {
+		//Exception 
+		/*int[] iArr= {2,4,5}; //--
+		try{
+			System.out.println(iArr[1]);
+			System.out.println("END OF TRY");
+		}catch (Exception e){//there should be 1 catch exception is mandatory
+			//Block of code to handle errors
+			System.out.println("I FOUND EXCEPTION");
+			// you can do some actions in this block
+		}
+
+		System.out.println("END");*/
+		String str=null;
+		try {
+			
+			System.out.println(str.charAt(4));
+		}catch(StringIndexOutOfBoundsException a)
+		{
+			//System.out.println("What Exception Priniting : "+a);
+			System.out.println(str.length());
+			
+		}catch(NullPointerException a) {
+			//System.out.println();
+			str="default";
+			System.out.println("Inside null pointer exception");
+		}
+		catch(Exception a) {
+			System.out.println(a);
+		}
+		finally {
+			System.out.println("Im final");
+		}
+	
+	
+	}
+
+}

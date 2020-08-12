@@ -1,0 +1,29 @@
+package boxingUnboxing;
+
+public class entry {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//both int and float are primitive datatype
+		int i=0;
+		float f=0;
+		
+		Integer j=10;
+		Float f2;
+		int[] iArr= {2,4,5}; //--
+		
+		/*
+Primitive type	Object
+boolean	        Boolean
+byte	        Byte
+char	        Character
+float	        Float
+int	            Integer
+long	        Long
+short	        Short
+double	        Double
+
+		 * */
+	}
+
+}

@@ -1,0 +1,14 @@
+package com.collections.linkedList;
+
+import java.util.LinkedList;
+
+public class entry {
+
+	public static void main(String[] args) {
+		
+		LinkedList<Student> liStudent= new LinkedList<>();
+		
+
+	}
+
+}

@@ -1,0 +1,33 @@
+package com.collections.ArrayList;
+
+import java.util.ArrayList;
+
+public class ArrayList1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//Normal Array
+		String[] strArr= {"sri","Nidhi","abhi"};
+		
+		ArrayList<String> aList =  new ArrayList<>();
+		aList.add("Sri");
+		aList.add("Nidhi");
+		aList.add("abhi");
+		System.out.println(aList);
+		
+		aList.add("Vinod");
+		aList.add(2,"Kumar");
+		aList.remove(0);
+		for(int i=0; i< aList.size();i++)
+		{
+			System.out.println(aList.get(i));
+		}
+	}
+/*
+ 1. Add is used to add element to array. aList.add
+ 2. aList.add(2,"Kumar")
+ 3. aList.remove to remove any value inside List
+ 4. By giving index we can also remove it
+ * */
+}

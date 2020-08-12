@@ -1,0 +1,49 @@
+package RestAssured_Demo.RestAssured_Demo;
+
+package rest_api;
+
+import java.util.HashMap;
+
+import io.restassured.RestAssured;
+import io.restassured.http.Header;
+import io.restassured.response.Response;
+
+public class tekarc_apis {
+
+	public static void main(String[] args) {
+		
+		String sHostname = "https://us-central1-qa01-tekarch-accmanager.cloudfunctions.net";
+		String sURI = "/login";
+		String sURL = sHostname + sURI;
+		
+		//post method
+		RestAssured.baseURI= sURL;
+		
+		Response res1 = RestAssured.given().contentType("application/Json").body("{\"username\": \"Varsha@ta.com\", \"password\": \"Varsha\"}").post();
+	    System.out.println(res1.asString());
+	    System.out.println(res1.statusCode());
+	    
+	    String sToken = res1.jsonPath().getString("token").toString();
+	    sToken=sToken.replaceAll("\\[", "").replaceAll("\\]", "");
+	    System.out.println(sToken);
+	    String sUid = res1.jsonPath().getString("userid").toString();
+	    System.out.println(sUid);
+	    
+	    //get method
+	    sURI = "/getData";
+	    sURL = sHostname + sURI;
+	    System.out.println();
+	    HashMap<String, String> mapToken = new HashMap<String, String>();
+		mapToken.put("token",sToken);
+	    
+	    RestAssured.baseURI = sURL;
+	    Response res2 = RestAssured.given().contentType("application/Json").headers(mapToken).get();
+	    System.out.println(res2.asString());
+		System.out.println(res2.statusCode());
+		
+	    
+	    
+
+	}
+
+}

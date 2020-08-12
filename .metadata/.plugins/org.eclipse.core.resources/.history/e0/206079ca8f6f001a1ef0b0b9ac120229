@@ -1,0 +1,22 @@
+
+public class employee {
+	private String empName; 
+	private int empRollNumber;
+	public void setEmpName(String empName) {
+		this.empName=empName;
+	}
+	
+	public String getEmpName() {
+		return this.empName;
+	}
+	
+	public void setEmpRollNum(String empName) {
+		//Logic implement here
+		this.empName=empName;
+	}
+
+	public void getEmpRollNum(String empName) {
+		//Logic implement here
+		this.empName=empName;
+	}
+}

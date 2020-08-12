@@ -1,0 +1,20 @@
+
+public class entry {
+
+	public static void main(String[] args) {
+		//1. Class will be declared using keyword abstract
+		//2. Abstract class can have method without body and with body
+		//3. Abstract class cannot be instantiated
+		//4. If child class wants to extend the parent then all 
+		// unimplemented methods needs to be implemented in child class. Else you can make child class
+		// as abstract
+		//5. there can be more than one or zero abstract method in abstract class
+		
+		Animal a  = new Animal();
+		Dog d = new Dog();
+		d.methodWithBody();
+		d.methodWithoutBody();
+		
+	}
+
+}

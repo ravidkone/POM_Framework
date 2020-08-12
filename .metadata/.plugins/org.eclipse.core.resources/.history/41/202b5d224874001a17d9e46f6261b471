@@ -1,0 +1,18 @@
+package com.collections.linkedList;
+
+public class Student implements Comparable<Student>{
+
+	public String sName;
+	public int iId;
+	
+	public Student(String name, int id) {
+	this.sName=name;
+	this.iId=id;
+	}
+
+	@Override
+	public int compareTo(Student o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+}

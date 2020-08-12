@@ -1,0 +1,15 @@
+package overriding;
+
+public class Entry {
+
+	public static void main(String[] args) {
+		/*
+		 Overriding:
+		 Animal --> print something
+		*/
+		Animal a = new Animal();
+		a.animalSound();
+		
+	}
+
+}

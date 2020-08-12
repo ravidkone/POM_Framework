@@ -1,0 +1,7 @@
+
+interface IDance {
+
+	String sBranchName="NIDHI";
+	static void Activity();
+
+}

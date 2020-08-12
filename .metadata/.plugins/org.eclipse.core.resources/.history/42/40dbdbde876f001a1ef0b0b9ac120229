@@ -1,0 +1,11 @@
+package overriding;
+
+public class Dog extends Animal {
+	
+	public void animalSound() {
+		System.out.println("Dog Says Bow bow");
+	}
+	public void a1() {
+		System.out.println("a1");
+	}
+}

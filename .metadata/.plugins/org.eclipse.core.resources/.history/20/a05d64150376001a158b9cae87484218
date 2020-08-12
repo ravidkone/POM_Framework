@@ -1,0 +1,13 @@
+package deleteMe;
+
+public class Answer4 {
+
+	public static void main(String[] args) {
+	
+		if(passwordCheckMethod(""))
+		{
+			System.out.println("Meeting all the requirement");
+		}
+	
+	}
+}

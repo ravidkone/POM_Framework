@@ -1,0 +1,44 @@
+package RestAssured_Demo.RestAssured_Demo;
+
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+
+public class api_automation_demo {
+
+	public static void main(String[] args) {
+		
+		/*String sHostName="https://us-central1-qa01-tekarch-accmanager.cloudfunctions.net";
+		String URI="/login";
+		String URL = sHostName+URI;
+		
+		RestAssured.baseURI=URL;
+		Response res = RestAssured.given().body("{\"username\":\"mithun@ta.com\",\"password\":\"mithun\"}").
+				contentType("application/json").post();
+		
+		System.out.println(res.asString());//whole response im printing
+		System.out.println(res.statusCode());
+		
+		//Parsing the json response of the API
+		String sToken = res.jsonPath().getString("token").toString();
+		System.out.println(sToken);
+		 System.out.println(res.jsonPath().getString("userid").toString());
+		 */
+		 //Get Data
+		
+		String sHostName="https://us-central1-qa01-tekarch-accmanager.cloudfunctions.net";
+		String URI="/getdata";
+		String URL = sHostName+URI;
+		
+		RestAssured.baseURI=URL;
+		
+		
+		
+		//10minutes
+		/*
+		Given --> <credentials> --> prerequisite
+		When  --> i say login  --> What need to be done
+		Then --> login should happen --> what needs to be validated after the action
+		*/
+	}
+
+}

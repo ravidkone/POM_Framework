@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="1651" started-at="2020-05-01T14:49:55Z" finished-at="2020-05-01T14:49:56Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="1651" started-at="2020-05-01T14:49:55Z" finished-at="2020-05-01T14:49:56Z">
+      <class name="temp.demo_dataprovider">
+        <test-method status="PASS" signature="testDataProviderExcel(java.lang.String, int, java.lang.String)[pri:0, instance:temp.demo_dataprovider@685cb137]" name="testDataProviderExcel" duration-ms="12" started-at="2020-05-01T14:49:56Z" data-provider="asposetrainerInfo" finished-at="2020-05-01T14:49:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Srinidhi]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[14]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[srinidhi.b@tekarch.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDataProviderExcel -->
+        <test-method status="PASS" signature="testDataProviderExcel(java.lang.String, int, java.lang.String)[pri:0, instance:temp.demo_dataprovider@685cb137]" name="testDataProviderExcel" duration-ms="2" started-at="2020-05-01T14:49:56Z" data-provider="asposetrainerInfo" finished-at="2020-05-01T14:49:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Abhishek]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[15]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[abhishekmj11@gmail.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDataProviderExcel -->
+        <test-method status="PASS" signature="testDataProviderExcel(java.lang.String, int, java.lang.String)[pri:0, instance:temp.demo_dataprovider@685cb137]" name="testDataProviderExcel" duration-ms="1" started-at="2020-05-01T14:49:56Z" data-provider="asposetrainerInfo" finished-at="2020-05-01T14:49:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Vinod Kumar T ]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[14]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[vinod.kumar@tekarch.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDataProviderExcel -->
+        <test-method status="PASS" signature="testDataProviderExcel(java.lang.String, int, java.lang.String)[pri:0, instance:temp.demo_dataprovider@685cb137]" name="testDataProviderExcel" duration-ms="2" started-at="2020-05-01T14:49:56Z" data-provider="asposetrainerInfo" finished-at="2020-05-01T14:49:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Mithun R]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[mithun.r@tekarch.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDataProviderExcel -->
+        <test-method status="PASS" signature="testDataProviderExcel(java.lang.String, int, java.lang.String)[pri:0, instance:temp.demo_dataprovider@685cb137]" name="testDataProviderExcel" duration-ms="2" started-at="2020-05-01T14:49:56Z" data-provider="asposetrainerInfo" finished-at="2020-05-01T14:49:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Akshay Kumar]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[akshay.kumar@tekarch.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDataProviderExcel -->
+      </class> <!-- temp.demo_dataprovider -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

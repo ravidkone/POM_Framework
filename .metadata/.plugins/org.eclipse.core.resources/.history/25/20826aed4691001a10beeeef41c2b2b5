@@ -1,0 +1,31 @@
+package RestAssured_Demo.RestAssured_Demo;
+
+import java.util.List;
+import java.util.Map;
+
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+
+public class delete {
+
+	public static void main(String[] args) {
+		RestAssured.baseURI="https://jsonplaceholder.typicode.com/users";
+		Response res1 = RestAssured.get();
+		System.out.println(res1.statusCode());
+		System.out.println(res1.asString());
+		System.out.println("**************");
+		String usernames = res1.jsonPath().getString("username");
+		System.out.println(usernames);
+		System.out.println(res1.jsonPath().getString("company[1]"));
+		System.out.println(res1.jsonPath().getList("company").get(1));
+		System.out.println(res1.jsonPath().getString("company[0].name"));
+		List<Map<String,String>> company = res1.jsonPath().getList("company");
+		System.out.println("**************");
+		for(int i=0; i<company.size();i++) {
+		System.out.println(company.get(i).get("name")+"\t"+company.get(i).get("catchPhrase"));
+		
+		}
+
+	}
+
+}

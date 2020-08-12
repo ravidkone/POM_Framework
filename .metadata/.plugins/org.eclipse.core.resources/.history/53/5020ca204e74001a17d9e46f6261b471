@@ -1,0 +1,19 @@
+package com.collections.Hashmap;
+
+import java.util.HashMap;
+
+public class HashMapExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		HashMap<Integer,String> hm = new HashMap<>();
+		hm.put(10, "B");
+		hm.put(15, "B");
+		hm.put(12, "B");
+		hm.put(18, "B");
+		hm.put(14, "B");
+		//Hashmap is an unordered list
+	}
+
+}

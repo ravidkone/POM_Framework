@@ -1,0 +1,10 @@
+package Demo_Selenium.Demo_Selenium;
+
+public class SwitchTo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

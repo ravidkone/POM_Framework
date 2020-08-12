@@ -1,0 +1,21 @@
+package temp;
+
+public class demo_2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//in a college we have students --> 35 and above they are pass and rest all failed
+		int score = 50;
+		//Scanner
+		if(score>35) {
+			System.out.println("Student is pass "+score);
+		}
+		else {
+			System.out.println("Student Fail "+score);
+			
+		}
+		
+	}
+
+}

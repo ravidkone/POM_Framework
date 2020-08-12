@@ -1,0 +1,40 @@
+package deleteMe;
+
+public class Q_Apr_8_1 {
+
+	public static void main(String[] args) {
+		/*
+ 3.  Write a method that takes a string of email addresses as an argument, 
+ processes that string, and displays the first part of the email (i.e. the part before ‘@’) 
+ if that part consists of alpha characters only. Each item should be displayed on a new line.
+Given the input:  
+AngelaKowalski@yahoo.com,John234@yahoo.com,678@gmail.com,JasonMendez@wellsfargo.com,Gemini_234@aol.com,GordonBrown@wellsfargo.com
+The output should be:
+AngelaKowalski
+JasonMendez
+GordonBrown
+		 * */
+		
+		String sEmailAddress="AngelaKowalski@yahoo.com,John234@yahoo.com,678@gmail.com,JasonMendez@wellsfargo.com,Gemini_234@aol.com,GordonBrown@wellsfargo.com";
+		checkAlphaCharachters(sEmailAddress);
+	}
+
+	private static void checkAlphaCharachters(String sEmailAddress) {
+		String[] sArrOnlyEmail = sEmailAddress.split(",");
+		
+		for(int count=0;count<sArrOnlyEmail.length;count++) {
+			String[]sArrEmailName = sArrOnlyEmail[count].split("@");
+			
+			char[] cArrEmailName = sArrEmailName[0].toCharArray();
+			
+			if(cArrEmailName>='A')
+			
+			// 
+			/*if(sArrEmailName[0].matches("^[a-zA-Z]+"))
+				System.out.println(sArrEmailName[0]);*/
+			
+		}
+	}
+	
+
+}

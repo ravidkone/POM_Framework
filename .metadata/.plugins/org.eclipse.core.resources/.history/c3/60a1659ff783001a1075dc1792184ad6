@@ -1,0 +1,33 @@
+package Demo_Selenium.Demo_Selenium;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class widget extends BrowserUtility{
+
+	public static void main(String[] args) throws Exception {
+		launchBrowser("ch");
+		loginToBrowser();
+		//local webdriver i have created and i have replace the value of the browser intstantiated driver objected to it
+		WebDriver driver = BrowserUtility.driver;
+		WebElement ele = driver.findElement(By.xpath("//button[contains(text(),'Widget')]"));
+		waitForPageElementToVisible(ele);
+		//driver.findElement(By.xpath("//button[contains(text(),'Widget')]")).click();
+		ele.click();
+		waitForPageElementToVisible(driver.findElement(By.xpath("//a[contains(text(),'Table')]")));
+		driver.findElement(By.xpath("//a[contains(text(),'Table')]")).click();
+		waitForPageElementToVisible(driver.findElement(By.xpath("//p[contains(text(),'Table')]")));
+		//findelement, findelements
+		List<WebElement> li_row1 =driver.findElements(By.xpath("//tbody/tr[1]"));
+		for(int count=0;count<li_row1.size();count++) {
+		System.out.println(li.get(count).getText());
+		}
+		
+		Thread.sleep(10000);
+		quitBrowser();
+	}
+
+}

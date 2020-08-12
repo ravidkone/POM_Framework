@@ -1,0 +1,25 @@
+package deleteMe;
+
+public class Answer4 {
+
+	public static void main(String[] args) {
+	
+		if(passwordCheckMethod(""))
+		{
+			System.out.println("Meeting all the requirement");
+		}
+	
+	}
+
+	private static boolean passwordCheckMethod(String sPassword) {
+		boolean bRes_Flag=false;
+		checkOneAlphaCharachterPresentorNot(sPassword);
+		
+		return bRes_Flag;
+	}
+
+	private static boolean checkOneAlphaCharachterPresentorNot(String sPassword) {
+		boolean bres_Flag=true;
+		return bres_Flag;
+	}
+}

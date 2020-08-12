@@ -1,0 +1,7 @@
+
+public interface ISports {
+
+	// 
+	void Activity();
+	void cricket();
+}

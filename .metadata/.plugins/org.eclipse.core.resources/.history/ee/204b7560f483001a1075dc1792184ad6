@@ -1,0 +1,10 @@
+package Demo_Selenium.Demo_Selenium;
+
+public class widget extends BrowserUtility{
+
+	public static void main(String[] args) {
+		launchBrowser("ch");
+		loginToBrowser();
+	}
+
+}

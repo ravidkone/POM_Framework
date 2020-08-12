@@ -1,0 +1,206 @@
+package deleteMe;
+
+
+import java.io.File;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class TicketMaster {
+	public static WebDriver driver;
+
+	@BeforeMethod
+	public static void setupChromeDriver() throws InterruptedException {
+
+		//System.setProperty("webdriver.chrome.driver", "C:\\Java_Anitha\\chromedriver.exe\\");
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		System.out.println("Chrome browser launched");
+		driver.manage().window().maximize();
+		//ImplicitWait, Explicit wait, Fluent wait
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
+		driver.get("https://www.ticketmaster.com/");
+		Thread.sleep(7000); // --> Reject 
+
+	}
+
+	@AfterMethod
+	public static void tearDown() throws InterruptedException {
+		driver.quit();
+	}
+
+	@Test
+	public static void eventListings() throws Exception {
+		//if it is not found. Then when it will again poll it..
+		WebElement place = driver.findElement(By.xpath("//input[@placeholder='City or Zip Code']"));
+		place.sendKeys("San Francisco");
+		Thread.sleep(3000);
+		WebElement placeSelect = driver.findElement(By.xpath("//li[@data-gtm1='San_Francisco_CA']"));
+		Thread.sleep(3000);
+
+		placeSelect.click();
+		Thread.sleep(3000);
+
+		WebElement searchButton = driver.findElement(By.xpath("//div[@class='xbx184-0 cTMZsG']"));
+
+		searchButton.click();
+		Thread.sleep(5000);
+		WebElement header = driver.findElement(By.tagName("h3"));
+		String actualHeader = header.getText();
+		String expectedHeader = "Near San Francisco, CA";
+		Assert.assertEquals(actualHeader, expectedHeader);
+		System.out.println("Header matches with expected value " + expectedHeader);
+
+		WebElement dateDropdown = driver.findElement(By.xpath("//div[@data-tid='dateFilter']"));
+
+		dateDropdown.click();
+		Thread.sleep(2000);
+
+		WebElement dateRange = driver.findElement(By.xpath("//span[@title='Date Range']"));
+		dateRange.click();
+		Thread.sleep(2000);
+		JavascriptExecutor je = (JavascriptExecutor) driver;
+		je.executeScript("window.scrollBy(0,500)");
+		WebElement monthName = driver.findElement(By.xpath("//*[contains(@class,'Calendarstyle__Months')]"));
+		WebElement titleMonth = monthName.findElement(By.xpath("//div[contains(@class,'title--month')]"));
+		WebElement fromDate = titleMonth
+				.findElement(By.xpath("//*[text()='Apr 2020']//following::div[2]//button//span[text()='20']"));
+
+		Thread.sleep(2000);
+		fromDate.click();
+		Thread.sleep(3000);
+
+		WebElement toDate = driver.findElement(By.xpath(
+				"//div[@class='Calendarstyle__MonthName-sc-1buxh9k-9 kvjSCk title--month' and text()='May 2020']//following::div[2]//button//span[text()='17']"));
+//		WebElement toDate =driver.findElement(By.xpath(
+//				"//*[text()='May 2020']//following::div[2]//button//span[text()='21']"));
+
+		toDate.click();
+		Thread.sleep(5000);
+
+		WebElement applyDate = driver.findElement(By.xpath("//button[text()='Apply']"));
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", applyDate);
+		Thread.sleep(5000);
+
+//		WebElement distanceDropdown = driver
+//				.findElement(By.xpath("//div[@aria-labelledby='hidden-label__Select_Your_Distance']"));
+//		distanceDropdown.click();
+//		Thread.sleep(3000);
+//		WebElement selectMile = driver.findElement(By.xpath("//span[@title='75 mi']"));
+//		selectMile.click();
+//		Thread.sleep(3000);
+
+//===========================================================================
+//method to click loadmore button to access all elements of webpage
+		WebElement loadMore = driver.findElement(By.xpath("//button[@data-tid='LoadMoreButton']"));
+		while (loadMore.isDisplayed()) {
+
+			try {
+				loadMore.click();
+				Thread.sleep(2000);
+				loadMore = driver.findElement(By.xpath("//button[@data-tid='LoadMoreButton']"));
+			} catch (Exception NoSuchElementException) {
+				break;
+			}
+		}
+//===============================================================================================
+		WebElement eventsListing = driver.findElement(By.xpath("//div[@class='sc-9916rz-0 kURUUB event-listing']"));
+
+		List<WebElement> listAllEvents = eventsListing
+				.findElements(By.xpath("//*[contains(@class,'event-listing__item')]"));
+		System.out.println("Total Events: " + listAllEvents.size());
+		int size = listAllEvents.size();
+
+		// Printing data in the text file
+		File DestFile = new File("C:\\Users\\mapkhome\\Desktop\\Canceled_Events" + ".txt");
+		FileUtils.write(DestFile, "\n");
+		String eventsInfo = "out of all " + size + " events  ";
+
+		FileUtils.write(DestFile, eventsInfo, true);
+
+		int count = 0;
+		for (WebElement event : listAllEvents) {
+
+			if (event.getText().toUpperCase().contains("CANCELED")) {
+
+				WebElement allHeader = event
+						.findElement(By.xpath(".//div[contains(@class,\"event-listing-header--desktop\")]"));
+				WebElement wb_Time = event.findElement(By.xpath(".//div[contains(@class,\"event-listing__date\")]"));
+
+				String title = allHeader.findElement(By.xpath(".//div[contains(@class, \"event-tile__title\")]"))
+						.getText();
+				String location = allHeader.findElement(By.xpath(".//div[contains(@class, 'event-tile__sub-title')]"))
+						.getText();
+				String date = wb_Time.findElement(By.xpath(".//div[contains(@class, 'event-tile__date-title')]"))
+						.getText();
+
+				//Split the time and pass to the method
+				String[] time = getTime(wb_Time).split("•");
+				String t1 = time[1].toString();
+				if (validateShowTime(time[1])) {
+					FileUtils.write(DestFile, "\n", true);
+					FileUtils.write(DestFile, title, true);
+					FileUtils.write(DestFile, "\n", true);
+					FileUtils.write(DestFile, date, true);
+					FileUtils.write(DestFile, t1, true);
+					FileUtils.write(DestFile, "\n", true);
+					System.out.println(title + " " + location + " " + date + " " + t1);
+					count++;
+				}
+
+			}
+		}
+		// ==============================================================================
+
+		String eventsCanceled = "These Events got canceled " + count;
+		FileUtils.write(DestFile, eventsCanceled, true);
+		System.out.println("Cancelled Events:" + count);
+
+	}
+
+	private static String getTime(WebElement dateTimeDiv) {
+		String time = dateTimeDiv.findElement(By.xpath(".//div[contains(@class, \"event-tile__sub-title\")]"))
+				.getText();
+		return time;
+	}
+
+//================================================================================
+	// Method to convert time and filter events after 6pm
+	private static Boolean validateShowTime(String input) {
+		SimpleDateFormat parseFormat = new SimpleDateFormat("hh:mmaa");
+		Date date = null;
+		try {
+			date = parseFormat.parse(input);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		LocalTime showtime = LocalTime.of(date.getHours(), date.getMinutes());
+		return showtime.isAfter(LocalTime.parse("18:00")) && showtime.isBefore(LocalTime.parse("23:59"));
+
+	}
+}

@@ -1,0 +1,9 @@
+
+public class student implements IDance,ISports {
+
+	
+	public void Activity() {
+		System.out.println("I have implemented my own activity");
+		
+	}
+}

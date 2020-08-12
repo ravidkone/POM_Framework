@@ -1,0 +1,56 @@
+
+public class Day4 {
+
+	//Recursive loop
+	// Arrays
+	//Strings
+	public static void main(String[] args) {
+		
+		String str = "Hello"; 
+		// String is not primitive data
+		//String is a separate class
+		/*System.out.println(str);
+		System.out.println(str.length());
+		System.out.println(str.toLowerCase());
+		System.out.println(str.toUpperCase());
+		System.out.println(str.indexOf("H"));
+		System.out.println(str.replace("e", "M"));
+		*/
+		/*String str1 = "sri";
+		String str2 = "Nidhi";
+		System.out.println(str1+str2);
+		String sText = "asdda\tsda"+"qwelkjbr";
+		System.out.println(sText);*/
+		//Take that assighnment --> will talk tomorrow --> Start exploring it
+		
+		String str1="sri"; // sri --> str1 --> 114154
+		String str2="nidhi"; // nidhi --> str2 --> 104814794
+		System.out.println("str1.hashCode() : "+str1.hashCode());
+		System.out.println("Before:");
+		System.out.println("str2.hashCode() : "+str2.hashCode());
+		
+		str2=str1; //--> str2 = nidhi --> orpha
+		System.out.println("After:");
+		System.out.println("str2.hashCode() : "+str2.hashCode());
+		str2="nidhi";
+		System.out.println("str2.hashCode() : "+str2.hashCode());
+		str1=str1+"xxx";
+		System.out.println("str2.hashCode() : "+str2.hashCode());
+		int i=10; //10 --> will not be left orphanse
+		int j=20;
+		i=j;
+		//There cannot be more than 1 string with the same value in memory
+		//String cannot change value, instead a new string is formed always
+		
+		//HEAP MEMORY
+		// run time data memory
+		//JVM starts up --> When you start running program
+		// Maximum size oof this heap is set to be 64MB, // -Xmx = 
+		
+		String str1= "sri";
+		String str2="nidhi";
+		String s1 = new String("sri");
+		String s2 = new String("nidhi");
+	}
+
+}

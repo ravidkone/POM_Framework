@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Dog.java&apos; to &apos;packages/src/com.audi.finance&apos;&#x0D;&#x0A;- Original project: &apos;inheritence&apos;&#x0D;&#x0A;- Destination element: &apos;packages/src/com.audi.finance&apos;&#x0D;&#x0A;- Original element: &apos;inheritence.Dog.java&apos;" description="Copy compilation unit" destination="=packages/src&lt;com.audi.finance" element1="/src&lt;inheritence{Dog.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1585329356581" units="1" version="1.0"/>
+</session>

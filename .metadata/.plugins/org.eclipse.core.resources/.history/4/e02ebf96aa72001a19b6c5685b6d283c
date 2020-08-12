@@ -1,0 +1,12 @@
+
+public class entry {
+
+	public static void main(String[] args) {
+		//1. Class will be declared using keyword abstract
+		//2. Abstract class can have method without body and with body
+		//3. Abstract class cannot be instantiated
+		Animal a  = new Animal();
+		
+	}
+
+}

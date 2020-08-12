@@ -1,0 +1,19 @@
+
+public class entry {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+/*
+				class-College --> method()
+		
+method() - class-Sport 			class-Dance - method()
+						
+				class-Student
+				
+				//If java allowed multiple inheritence --> 
+			 so now question is how to solvethese kind of problem 
+		
+	*/	
+	}
+
+}

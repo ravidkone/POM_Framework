@@ -1,0 +1,7 @@
+package com.collections.linkedList;
+
+public class Student {
+
+	public String name;
+	public int Id;
+}

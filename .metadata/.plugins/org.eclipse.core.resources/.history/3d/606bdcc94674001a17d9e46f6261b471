@@ -1,0 +1,22 @@
+package com.collections.linkedList;
+
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class entry {
+
+	public static void main(String[] args) {
+		
+		LinkedList<Student> liStudent= new LinkedList<>();
+		liStudent.add(new Student("Srinidhi", 14));
+		liStudent.add(new Student("Sri", 5));
+		
+		Iterator<Student> It = liStudent.iterator();
+		while(It.hasNext()) {
+			Student temp = It.next();
+				System.out.println("I found ID :: "+temp.iId+"\t Name :: "+temp.sName);
+			
+		}
+	}
+
+}

@@ -1,0 +1,17 @@
+
+public class staff implements IDance,ISports{
+
+
+	public void cricket() {
+		System.out.println();
+		
+	}
+
+
+	public void Activity() {
+		
+		
+	}
+
+	
+}

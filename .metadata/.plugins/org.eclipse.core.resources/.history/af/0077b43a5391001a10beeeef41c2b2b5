@@ -1,0 +1,23 @@
+package RestAssured_Demo.RestAssured_Demo;
+
+import java.util.List;
+
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+
+public class getMethodExternal {
+
+	public static void main(String[] args) {
+		RestAssured.baseURI="https://jsonplaceholder.typicode.com/users";
+		Response res = RestAssured.get();
+		System.out.println(res.statusCode());
+		System.out.println(res.asString());
+		/*List<String> liUsername = res.jsonPath().getList("username");
+		for(String uname:liUsername) {
+			System.out.println(uname);
+		}
+		System.out.println(res.jsonPath().getString("username"));*/
+		System.out.println(res.jsonPath().getString("company.name"));
+	}
+
+}

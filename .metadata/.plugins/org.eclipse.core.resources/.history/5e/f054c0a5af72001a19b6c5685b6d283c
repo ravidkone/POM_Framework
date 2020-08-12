@@ -1,0 +1,9 @@
+
+public class student implements IDance,ISports {
+
+	
+	public void Activity() {
+		// TODO Auto-generated method stub
+		
+	}
+}

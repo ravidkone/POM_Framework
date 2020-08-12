@@ -1,0 +1,13 @@
+
+public class employee {
+	private String empName; 
+	
+	public void setEmpName(String empName) {
+		this.empName=empName;
+	}
+	
+	public String getEmpName(String empName) {
+		return this.empName;
+	}
+	
+}

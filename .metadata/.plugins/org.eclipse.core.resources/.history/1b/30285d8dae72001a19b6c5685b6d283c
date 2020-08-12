@@ -1,0 +1,16 @@
+
+public class entry {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+/*
+				class-College
+		
+		class-Sport 			class-Dance
+			
+				class-Student
+		
+	*/	
+	}
+
+}

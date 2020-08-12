@@ -1,0 +1,10 @@
+package RestAssured_Demo.RestAssured_Demo;
+
+public class delete {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

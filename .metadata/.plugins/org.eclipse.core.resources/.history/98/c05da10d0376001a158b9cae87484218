@@ -1,0 +1,10 @@
+package deleteMe;
+
+public class Answer4 {
+
+	public static void main(String[] args) {
+	
+		passwordCheckMethod("");
+	
+	}
+}

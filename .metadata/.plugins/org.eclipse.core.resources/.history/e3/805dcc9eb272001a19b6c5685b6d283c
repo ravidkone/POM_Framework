@@ -1,0 +1,8 @@
+
+public interface ISports {
+
+	// abstract public
+	int BallCount;
+	void Activity();
+	void cricket();
+}

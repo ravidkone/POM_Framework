@@ -1,0 +1,8 @@
+
+abstract public class Animal {
+
+	abstract void methodWithoutBody();
+	public void methodWithBody() {
+		
+	}
+}

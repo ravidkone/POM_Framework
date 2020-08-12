@@ -1,0 +1,36 @@
+package deleteMe;
+
+public class Answer4 {
+
+	public static void main(String[] args) {
+	
+		if(passwordCheckMethod(""))
+		{
+			System.out.println("Meeting all the requirement");
+		}
+	
+	}
+
+	private static boolean passwordCheckMethod(String sPassword) {
+		boolean bRes_Flag=false;
+		//The password must be exactly 8 characters long
+		if(sPassword.toCharArray().length!=8) {
+			return false;
+		}
+		if(!checkOneAlphaCharachterPresentorNot(sPassword))
+			return false;
+		
+		return bRes_Flag;
+	}
+	//1.aPassword must contain at least one alpha character, 
+	private static boolean checkOneAlphaCharachterPresentorNot(String sPassword) {
+		boolean bres_Flag=false;
+		char[] cArrPassword=sPassword.toCharArray();
+		for(int i=0;i<cArrPassword.length;i++)
+		{
+			if(Character.isAlphabetic(cArrPassword[i]))
+				return true;
+		}
+		return bres_Flag;
+	}
+}

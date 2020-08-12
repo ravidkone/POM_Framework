@@ -1,0 +1,12 @@
+package RestAssured_Demo.RestAssured_Demo;
+
+public class api_automation_demo {
+
+	public static void main(String[] args) {
+		String sHostName="";
+		String URI="";
+		String URL = sHostName+URI;
+
+	}
+
+}

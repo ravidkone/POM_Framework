@@ -1,0 +1,37 @@
+package boxingUnboxing;
+
+public class entry {
+	/*
+Primitive type	Object
+boolean	        Boolean
+byte	        Byte
+char	        Character
+float	        Float
+int	            Integer
+long	        Long
+short	        Short
+double	        Double
+
+	 * */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//both int and float are primitive datatype
+		int i=50;
+		float f=0;
+		
+		//conversion of primitive datatype to an object --> java will do it by default
+		Integer j=10;
+		Float f2;
+		int[] iArr= {2,4,5}; //--
+		
+		boxingMethod(i);//int primitive datatype
+		add(i,i);
+	}
+	
+	static void boxingMethod(Integer num) { //Integer object --> boxing 
+		System.out.println(num);
+	}
+	static void add(int a, int b) {
+		System.out.println(a+b);
+	}
+}

@@ -1,0 +1,43 @@
+
+public class entry {
+
+	public static void main(String[] args) {
+		
+/*
+				class-College --> method()
+		
+method() - class-Sport 			class-Dance - method()
+						
+				class-Student
+				
+				//If java allowed multiple inheritence --> 
+			 so now question is how to solvethese kind of problem 	
+	*/	
+		//IDance id = new IDance();
+		student s = new student();
+		//s.Activity();
+		s.cricket();
+		//Will be back @ 11:45 PST
+		//s.BallCount=100;//Its final
+		/* Books or other sites --> you will get confusion 
+		 Using interface we can achieve multiple inheritance
+		 1. We cannot instantiate an interface
+		 2. Interface will have only un implemented method. So Interface can give FULL abstraction
+		 3. implements keyword is used by class to implement interface
+		 4. class that implements interface must implement all the method of that interface
+		 5. All the interface methods are by default public and abstract
+		 6. Interface cannot be declared as private, protected
+		 7. Variables which is declared in interface are by default public static and final
+		 8. you cannot set value in entry class because all variables are final
+		 9. An interface can extend any interface but cannot implement it 
+		 10. Class can implement any number of interfaces
+		 11. If there are 2 or more  same methods in two interfaces and a class
+		 implements both interfaces implementation of the method only once
+		 Like our method Activity();
+		  
+		 * */
+		//1. COLLECTIONS --> week -->
+		
+	}
+
+}

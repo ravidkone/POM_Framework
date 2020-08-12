@@ -1,0 +1,34 @@
+package RestAssured_Demo.RestAssured_Demo;
+
+public class context {
+
+	public static void main(String[] args) {
+/*
+ Few companies are still with SoapAPi ---> 0.1
+ Few companies are still with SoapAPi and REST API --> 
+ Many companies are RESTAPI -->
+ 
+ 
+ Step 1:
+ We launched login url in browser
+ 
+ Step 2:
+ Entered Username and Password. Clicked on submit/login button
+ 
+ Who is validating it? database 
+ 
+ 
+ Browser is talking to database --> Database should be exposed to everyone - this is security problem
+ 
+ Middleware --> Rest Server/ Soap Server
+ 
+ 
+ Step 3:
+ It logedin successfully
+  
+  
+ * */
+
+	}
+
+}

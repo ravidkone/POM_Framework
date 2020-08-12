@@ -1,0 +1,54 @@
+
+public class Day2_1 {
+
+	// Methods and parameters
+	public static void main(String[] args) {
+
+		/*
+		 * int a = add(10,15); System.out.println(a); int b = sub(20,5);
+		 * System.out.println(b); int c = add(30, 45); System.out.println(c);
+		 * printMyname();
+		 */
+		// printNumberfromTo(0,10);
+		/*
+		 * printNumberfromTo(10,20); int sumValue=add(15,25); int output=sub(sumValue,
+		 * 10);
+		 */
+		int afSub = sub(20, 10);
+		System.out.println(afSub * 10);
+	}
+
+	private static void printNumberfromTo(int from, int to) {
+		for (int i = from; i <= to; i++) {
+			System.out.println(i);
+		}
+
+	}
+
+	static int add(int num1, int num2) {
+		int num3 = num1 + num2;
+		System.out.println(num3);
+		return num3;
+	}
+
+	static int sub(int sub1, int sub2) {
+		if (sub1 > sub2) {
+			int sub3 = sub1 - sub2;
+			return sub3;
+		} else {
+			int sub3 = sub2 - sub1;
+			//return sub3;
+		}
+	
+	}
+
+	static void printMyname() {
+		System.out.println("Srinidhi");
+	}
+
+	// return
+	void method() {
+		// statemetns
+	}
+
+}

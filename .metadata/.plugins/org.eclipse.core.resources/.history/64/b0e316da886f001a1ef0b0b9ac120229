@@ -1,0 +1,17 @@
+package overriding;
+
+public class Entry {
+
+	public static void main(String[] args) {
+		/*
+		 Overriding: --
+		 Animal --> print something
+		*/
+		Animal a = new Animal();
+		a.animalSound();
+		
+		Dog d = new Dog();
+		d.animalSound();// both will print, dog says bow bow
+	}
+
+}

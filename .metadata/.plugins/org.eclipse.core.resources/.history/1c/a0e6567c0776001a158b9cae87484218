@@ -1,0 +1,96 @@
+package deleteMe;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+
+public class Answer4 {
+
+	public static void main(String[] args) {
+	
+		if(passwordCheckMethod("srini123"))
+		{
+			System.out.println("Meeting all the requirement");
+		}
+		else
+			System.out.println("Not Met");
+	
+	}
+
+	private static boolean passwordCheckMethod(String sPassword) {
+		boolean bRes_Flag=true;
+		//The password must be exactly 8 characters long
+		if(sPassword.toCharArray().length!=8) {
+			return false;
+		}
+		//1.A Password must contain at least one alpha character,
+		if(!checkOneAlphaCharachterPresentorNot(sPassword))
+			return false;
+		//1.B Password must contain at least one numeric character, 
+		if(!checkNumericPresentorNot(sPassword))
+			return false;
+		//1.C Password must contain at least one non-alphanumeric character (i.e. #$%, etc.) 
+		if(!checknon_alphanumericPresentorNot(sPassword))
+					return false;
+				
+		//3.The existing numeric part must be incremented 
+		//--> Assuming password be sudha123 not sudha321 --> Not getting clarity
+		/*if(!checkExistingNumericIncrementPresentorNot(sPassword))
+			return false;
+*/
+		return bRes_Flag;
+	}
+ 
+	private static boolean checkExistingNumericIncrementPresentorNot(String sPassword) {
+		boolean bres_Flag=false;
+		char[] cArrPassword=sPassword.toCharArray();
+		ArrayList<Integer> aCh = null;
+		for(int i=0;i<cArrPassword.length;i++)
+		{
+			if(Character.isDigit(cArrPassword[i]))
+			{
+				aCh.add(Integer.parseInt(String.valueOf(cArrPassword[i])));
+			}
+		}
+		ArrayList<Integer> aChTemp = aCh;
+		Collections.sort(aCh);
+		if(aCh.equals(aChTemp))
+			return true;
+		return bres_Flag;
+	}
+
+	private static boolean checknon_alphanumericPresentorNot(String sPassword) {
+		boolean bres_Flag=false;
+		char[] cArrPassword=sPassword.toCharArray();
+		for(int i=0;i<cArrPassword.length;i++)
+		{
+			if(!Character.isLetterOrDigit(cArrPassword[i]))
+				return true;
+		}
+		return bres_Flag;
+
+	}
+
+	private static boolean checkNumericPresentorNot(String sPassword) {
+		boolean bres_Flag=false;
+		char[] cArrPassword=sPassword.toCharArray();
+		for(int i=0;i<cArrPassword.length;i++)
+		{
+			if(Character.isDigit(cArrPassword[i]))
+				return true;
+		}
+		return bres_Flag;
+
+	}
+
+	private static boolean checkOneAlphaCharachterPresentorNot(String sPassword) {
+		boolean bres_Flag=false;
+		char[] cArrPassword=sPassword.toCharArray();
+		for(int i=0;i<cArrPassword.length;i++)
+		{
+			if(Character.isAlphabetic(cArrPassword[i]))
+				return true;
+		}
+		return bres_Flag;
+	}
+}

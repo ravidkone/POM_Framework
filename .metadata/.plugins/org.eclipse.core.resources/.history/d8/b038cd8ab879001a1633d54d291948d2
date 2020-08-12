@@ -1,0 +1,66 @@
+package deleteMe;
+
+public class Q_Apr_8_1 {
+
+	public static void main(String[] args) {
+		/*
+ 3.  Write a method that takes a string of email addresses as an argument, 
+ processes that string, and displays the first part of the email (i.e. the part before ‘@’) 
+ if that part consists of alpha characters only. Each item should be displayed on a new line.
+Given the input:  
+AngelaKowalski@yahoo.com,John234@yahoo.com,678@gmail.com,JasonMendez@wellsfargo.com,Gemini_234@aol.com,GordonBrown@wellsfargo.com
+The output should be:
+AngelaKowalski
+JasonMendez
+GordonBrown
+		 * */
+		// i, j 
+		String sEmailAddress="AngelaKowalski@yahoo.com,John234@yahoo.com,678@gmail.com,JasonMendez@wellsfargo.com,Gemini_234@aol.com,GordonBrown@wellsfargo.com";
+		checkAlphaCharachters(sEmailAddress);
+		
+		/*
+	The rules for updating password are as follows: --> first you have to take one actual password --> Update password
+A. The password must contain:
+	1. at least one alpha character, 
+	2. at least one numeric character, 
+	3.at least one non-alphanumeric character (i.e. #$%, etc.)
+B. The password must be exactly 8 characters long --> only 8 charachters --> 9 / 7 == its not met
+C. The existing numeric part must be incremented --> sr@ni123 --> sr!ni234,  
+
+Write a function that takes an existing password as a parameter, updates it according to the rules above, 
+and returns it. 
+
+		 * */
+		
+	}
+
+	private static void checkAlphaCharachters(String sEmailAddress) {
+		String[] sArrOnlyEmail = sEmailAddress.split(",");
+		
+		for(int count=0;count<sArrOnlyEmail.length;count++) {
+			String[]sArrEmailName = sArrOnlyEmail[count].split("@");
+			
+			char[] cArrEmailName = sArrEmailName[0].toCharArray();
+			boolean bRes_Flag=true;
+			for(int countChar=0; countChar<cArrEmailName.length;countChar++)
+			{
+				if(Character.isDigit(cArrEmailName[countChar])) {
+					bRes_Flag=false;
+					break;
+				}
+				/*if(cArrEmailName[countChar] >='A'|| cArrEmailName[countChar] >='a' &&
+						cArrEmailName[countChar] >='Z' || cArrEmailName[countChar] >='z') {
+					
+				}*/
+			}
+			// 
+			/*if(sArrEmailName[0].matches("^[a-zA-Z]+"))
+				System.out.println(sArrEmailName[0]);*/
+			if(bRes_Flag)
+				System.out.println(sArrEmailName[0]);
+		}
+		
+	}
+	
+
+}

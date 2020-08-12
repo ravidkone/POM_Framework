@@ -1,0 +1,74 @@
+package RestAssured_Demo.RestAssured_Demo;
+
+import java.net.URI;
+import java.util.List;
+import java.util.Map;
+
+import com.github.tomakehurst.wiremock.WireMockServer;
+import com.github.tomakehurst.wiremock.client.ResponseDefinitionBuilder;
+import com.github.tomakehurst.wiremock.client.WireMock;
+
+import static io.restassured.RestAssured.*;
+
+import java.net.URISyntaxException;
+
+import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+
+
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+
+public class delete {
+	private static final int portnumber = 9090;
+	private static final String hostname = "localhost";
+	private static Response response;
+	private static WireMockServer wireMockServer = new WireMockServer(portnumber);
+
+	public static void main(String[] args) {
+		/*RestAssured.baseURI="https://jsonplaceholder.typicode.com/users";
+		Response res1 = RestAssured.get();
+		System.out.println(res1.statusCode());
+		System.out.println(res1.asString());
+		System.out.println("**************");
+		String usernames = res1.jsonPath().getString("username");
+		System.out.println(usernames);
+		System.out.println(res1.jsonPath().getString("company[1]"));
+		System.out.println(res1.jsonPath().getList("company").get(1));
+		System.out.println(res1.jsonPath().getString("company[0].name"));
+		List<Map<String,String>> company = res1.jsonPath().getList("company");
+		System.out.println("**************");
+		for(int i=0; i<company.size();i++) {
+		System.out.println(company.get(i).get("name")+"\t"+company.get(i).get("catchPhrase"));
+		}
+		*/
+		ResponseDefinitionBuilder mockResponse = new ResponseDefinitionBuilder();
+		wireMockServer.start();
+		WireMock.configureFor(hostname, portnumber);
+		WireMock.stubFor(WireMock.get("/api/student-info/all")
+				.willReturn(mockResponse.withStatus(200).withHeader("Content-Type", "application/json;charset=UTF-8")
+						.withBodyFile("StudentMockResponse.JSON")));
+		
+		RestAssured.baseURI="http://localhost:9090/api/student-info/all";
+		/*response = given().con(ContentType.JSON).when()
+				.get(new URI("http://localhost:9090/api/student-info/all")).then().assertThat().statusCode(200)
+				.extract().response();
+*/
+		response = RestAssured.given().get();
+		System.out.println(response.getStatusCode());
+		JsonPath jsonPath = new JsonPath(response.asString());
+		System.out.println("username : " + jsonPath.getString("username"));
+		System.out.println("All sessionid:	" + jsonPath.getString("sessionid"));
+		System.out.println("Last sessionid:	" + jsonPath.getString("sessionid[3]"));
+		System.out.println("Second Student Mark:	" + jsonPath.getString("students[1].marks"));
+		System.out.println("Second state value of first student:	" + jsonPath.getString("students[0].adresss[0].state"));
+		System.out.println("Second contact value of second student:	" + jsonPath.getString("students[1].contact"));
+		System.out.println("All cities of second student:	" + jsonPath.getString("students[1].adresss.city"));
+		System.out.println("Contacts of all students:	" + jsonPath.getString("students.contact"));
+		System.out.println("Adress of first student:	" + jsonPath.getString("students[0].adresss"));
+		wireMockServer.stop();
+	}
+
+}

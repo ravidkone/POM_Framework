@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="F:/TekArch_Training_Material/LibrariesPoi/xmlbeans-3.1.0.jar"/>
+	<classpathentry kind="lib" path="F:/TekArch_Training_Material/LibrariesPoi/poi-ooxml-4.1.2.jar"/>
+	<classpathentry kind="lib" path="F:/TekArch_Training_Material/LibrariesPoi/poi-4.1.2.jar"/>
+	<classpathentry kind="lib" path="F:/TekArch_Training_Material/LibrariesPoi/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="F:/TekArch_Training_Material/LibrariesPoi/commons-math3-3.6.1.jar"/>
+	<classpathentry kind="lib" path="F:/TekArch_Training_Material/LibrariesPoi/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="F:/TekArch_Training_Material/LibrariesPoi/commons-compress-1.18.jar"/>
+	<classpathentry kind="lib" path="F:/TekArch_Training_Material/LibrariesPoi/commons-codec-1.14.jar"/>
+	<classpathentry kind="lib" path="F:/TekArch_Training_Material/LibrariesPoi/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="lib" path="F:/TekArch_Training_Material/LibrariesPoi/ooxml-schemas-1.4.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

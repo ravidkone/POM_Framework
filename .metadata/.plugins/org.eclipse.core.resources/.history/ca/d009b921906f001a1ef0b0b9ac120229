@@ -1,0 +1,22 @@
+
+public class employee {
+	private String empName; 
+	private int empRollNumber;
+	public void setEmpName(String empName) {
+		this.empName=empName;
+	}
+	
+	public String getEmpName() {
+		return this.empName;
+	}
+	
+	public void setEmpRollNum() {//Time stamp --> 127866436
+		//Logic implement here// there will be unique number will come for every millisecond
+		this.empRollNumber=10*100*127866436;
+	}
+
+	public int getEmpRollNum() {
+		//Logic implement here
+		this.empRollNumber;
+	}
+}

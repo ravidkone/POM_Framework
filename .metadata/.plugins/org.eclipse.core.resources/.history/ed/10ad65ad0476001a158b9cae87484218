@@ -1,0 +1,56 @@
+package deleteMe;
+
+public class Answer4 {
+
+	public static void main(String[] args) {
+	
+		if(passwordCheckMethod(""))
+		{
+			System.out.println("Meeting all the requirement");
+		}
+	
+	}
+
+	private static boolean passwordCheckMethod(String sPassword) {
+		boolean bRes_Flag=false;
+		//The password must be exactly 8 characters long
+		if(sPassword.toCharArray().length!=8) {
+			return false;
+		}
+		//1.A Password must contain at least one alpha character,
+		if(!checkOneAlphaCharachterPresentorNot(sPassword))
+			return false;
+		//1.B Password must contain at least one numeric character, 
+		if(!checkNumericPresentorNot(sPassword))
+			return false;
+		//1.C Password must contain at least one non-alphanumeric character (i.e. #$%, etc.) 
+		if(!checkNumericPresentorNot(sPassword))
+					return false;
+				
+		
+		return bRes_Flag;
+	}
+ 
+	private static boolean checkNumericPresentorNot(String sPassword) {
+		boolean bres_Flag=false;
+		char[] cArrPassword=sPassword.toCharArray();
+		for(int i=0;i<cArrPassword.length;i++)
+		{
+			if(Character.isDigit(cArrPassword[i]))
+				return true;
+		}
+		return bres_Flag;
+
+	}
+
+	private static boolean checkOneAlphaCharachterPresentorNot(String sPassword) {
+		boolean bres_Flag=false;
+		char[] cArrPassword=sPassword.toCharArray();
+		for(int i=0;i<cArrPassword.length;i++)
+		{
+			if(Character.isAlphabetic(cArrPassword[i]))
+				return true;
+		}
+		return bres_Flag;
+	}
+}
